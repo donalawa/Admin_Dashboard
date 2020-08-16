@@ -14,229 +14,179 @@ export default [
       },
       {
         _name: 'CSidebarNavTitle',
-        _children: ['Theme']
-      },
-      {
-        _name: 'CSidebarNavItem',
-        name: 'Colors',
-        to: '/theme/colors',
-        icon: 'cil-drop'
-      },
-      {
-        _name: 'CSidebarNavItem',
-        name: 'Typography',
-        to: '/theme/typography',
-        icon: 'cil-pencil'
-      },
-      {
-        _name: 'CSidebarNavTitle',
-        _children: ['Components']
-      },
-      {
-        _name: 'CSidebarNavDropdown',
-        name: 'Base',
-        route: '/base',
-        icon: 'cil-puzzle',
-        items: [
-          {
-            name: 'Breadcrumbs',
-            to: '/base/breadcrumbs'
-          },
-          {
-            name: 'Cards',
-            to: '/base/cards'
-          },
-          {
-            name: 'Carousels',
-            to: '/base/carousels'
-          }, 
-          {
-            name: 'Collapses',
-            to: '/base/collapses'
-          },
-          {
-            name: 'Forms',
-            to: '/base/forms'
-          },
-          {
-            name: 'Jumbotrons',
-            to: '/base/jumbotrons'
-          },
-          {
-            name: 'List Groups',
-            to: '/base/list-groups'
-          },
-          {
-            name: 'Navs',
-            to: '/base/navs'
-          },
-          {
-            name: 'Navbars',
-            to: '/base/navbars'
-          },
-          {
-            name: 'Paginations',
-            to: '/base/paginations'
-          },
-          {
-            name: 'Popovers',
-            to: '/base/popovers'
-          },
-          {
-            name: 'Progress Bars',
-            to: '/base/progress-bars'
-          },
-          {
-            name: 'Switches',
-            to: '/base/switches'
-          },
-          {
-            name: 'Tables',
-            to: '/base/tables'
-          },
-          {
-            name: 'Tabs',
-            to: '/base/tabs'
-          },
-          {
-            name: 'Tooltips',
-            to: '/base/tooltips'
-          }
-        ]
-      },
-      {
-        _name: 'CSidebarNavDropdown',
-        name: 'Buttons',
-        route: '/buttons',
-        icon: 'cil-cursor',
-        items: [
-          {
-            name: 'Buttons',
-            to: '/buttons/standard-buttons'
-          },
-          {
-            name: 'Button Dropdowns',
-            to: '/buttons/dropdowns'
-          },
-          {
-            name: 'Button Groups',
-            to: '/buttons/button-groups'
-          },
-          {
-            name: 'Brand Buttons',
-            to: '/buttons/brand-buttons'
-          }
-        ]
-      },
-      {
-        _name: 'CSidebarNavItem',
-        name: 'Charts',
-        to: '/charts',
-        icon: 'cil-chart-pie'
-      },
-      {
-        _name: 'CSidebarNavDropdown',
-        name: 'Icons',
-        route: '/icons',
-        icon: 'cil-star',
-        items: [
-          {
-            name: 'CoreUI Icons',
-            to: '/icons/coreui-icons',
-            badge: {
-              color: 'info',
-              text: 'NEW'
-            }
-          },
-          {
-            name: 'Brands',
-            to: '/icons/brands'
-          },
-          {
-            name: 'Flags',
-            to: '/icons/flags'
-          }
-        ]
-      },
-      {
-        _name: 'CSidebarNavDropdown',
-        name: 'Notifications',
-        route: '/notifications',
-        icon: 'cil-bell',
-        items: [
-          {
-            name: 'Alerts',
-            to: '/notifications/alerts'
-          },
-          {
-            name: 'Badges',
-            to: '/notifications/badges'
-          },
-          {
-            name: 'Modals',
-            to: '/notifications/modals'
-          }
-        ]
-      },
-      {
-        _name: 'CSidebarNavItem',
-        name: 'Widgets',
-        to: '/widgets',
-        icon: 'cil-calculator',
-        badge: {
-          color: 'primary',
-          text: 'NEW',
-          shape: 'pill'
-        }
-      },
-      {
-        _name: 'CSidebarNavDivider',
-        _class: 'm-2'
-      },
-      {
-        _name: 'CSidebarNavTitle',
-        _children: ['Extras']
+        _children: ['Seven Advanced Academy']
       },
       {
         _name: 'CSidebarNavDropdown',
         name: 'Pages',
         route: '/pages',
-        icon: 'cil-star',
+        icon: 'cil-puzzle',
         items: [
           {
-            name: 'Login',
-            to: '/pages/login'
+            name: 'Home',
+            to: '/pages/home'
           },
           {
-            name: 'Register',
-            to: '/pages/register'
+            name: 'Admission',
+            to: '/pages/admission'
           },
           {
-            name: 'Error 404',
-            to: '/pages/404'
+            name: 'About Us',
+            to: '/pages/about'
+          }, 
+          {
+            name: 'Contact Page',
+            to: '/pages/contact',
+          },
+         
+        ]
+      },//END
+      {
+        _name: 'CSidebarNavDropdown',
+        name: 'Certification',
+        route: '/certification',
+        icon: 'cil-cursor',
+        items: [
+          {
+            name: 'All Certification',
+            to: '/certification/all'
           },
           {
-            name: 'Error 500',
-            to: '/pages/500'
+            name: 'Add New',
+            to: '/certification/add-new',
+            badge: {
+              color: 'primary',
+              text: 'NEW'
+            }
           }
         ]
       },
       {
-        _name: 'CSidebarNavItem',
-        name: 'Download CoreUI',
-        href: 'http://coreui.io/vue/',
-        icon: { name: 'cil-cloud-download', class: 'text-white' },
-        _class: 'bg-success text-white',
-        target: '_blank'
+        _name: 'CSidebarNavDropdown',
+        name: 'Events',
+        route: '/events',
+        icon: 'cil-star',
+        items: [
+          {
+            name: 'All Events',
+            to: '/events/all',
+          },
+          {
+            name: 'Add New',
+            to: '/events/add-new',
+            badge: {
+              color: 'primary',
+              text: 'NEW'
+            }
+          },
+          {
+            name: 'Event Category',
+            to: '/events/category',
+            badge: {
+              color: 'primary',
+              text: 'NEW'
+            }
+          },
+        ]
       },
       {
-        _name: 'CSidebarNavItem',
-        name: 'Try CoreUI PRO',
-        href: 'http://coreui.io/pro/vue/',
-        icon: { name: 'cil-layers', class: 'text-white' },
-        _class: 'bg-danger text-white',
-        target: '_blank'
-      }
+        _name: 'CSidebarNavDropdown',
+        name: 'Post',
+        route: '/posts',
+        icon: 'cil-bell',
+        items: [
+          {
+            name: 'All Posts',
+            to: '/posts/all'
+          },
+          {
+            name: 'Add New',
+            to: '/posts/add-new',
+            badge: {
+              color: 'primary',
+              text: 'NEW',
+              shape: 'pill'
+            }
+          },
+          {
+            name: 'Post Category',
+            to: '/posts/category'
+          }
+        ]
+      },
+      {
+        _name: 'CSidebarNavDropdown',
+        name: 'Course',
+        route: '/course',
+        icon: 'cil-star',
+        items: [
+          {
+            name: 'All Courses',
+            to: '/course/all',
+          },
+          {
+            name: 'Add New',
+            to: '/course/add-new',
+            badge: {
+              color: 'primary',
+              text: 'NEW'
+            }
+          },
+        ]
+      },
+      {
+        _name: 'CSidebarNavDropdown',
+        name: 'Course Corriculum',
+        to: '/corriculum',
+        icon: 'cil-calculator',
+        badge: {
+          color: 'primary',
+          text: 'NEW',
+          shape: 'pill'
+        },
+        items: [
+          {
+            name: 'All Corriculum',
+            to: '/corriculum/all'
+          },
+          {
+            name: 'Add New Corriculum',
+            to: '/corriculum/add-new',
+            badge: {
+              color: 'primary',
+              text: 'New',
+              shape: 'pill'
+            }
+          },
+        ]
+      },
+      {
+        _name: 'CSidebarNavDropdown',
+        name: 'Admin Users',
+        to: '/users',
+        icon: 'cil-user',
+        badge: {
+          color: 'primary',
+          text: 'NEW',
+          shape: 'pill'
+        },
+        items: [
+          {
+            name: 'All',
+            to: '/users/all'
+          },
+          {
+            name: 'Add New',
+            to: '/users/add-new',
+            badge: {
+              color: 'primary',
+              text: 'New',
+              shape: 'pill'
+            }
+          },
+        ]
+      },
     ]
   }
 ]
+

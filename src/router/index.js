@@ -7,45 +7,42 @@ const TheContainer = () => import('@/containers/TheContainer')
 // Views
 const Dashboard = () => import('@/views/Dashboard')
 
-const Colors = () => import('@/views/theme/Colors')
-const Typography = () => import('@/views/theme/Typography')
-
-const Charts = () => import('@/views/charts/Charts')
-const Widgets = () => import('@/views/widgets/Widgets')
 
 // Views - Components
-const Cards = () => import('@/views/base/Cards')
-const Forms = () => import('@/views/base/Forms')
-const Switches = () => import('@/views/base/Switches')
-const Tables = () => import('@/views/base/Tables')
-const Tabs = () => import('@/views/base/Tabs')
-const Breadcrumbs = () => import('@/views/base/Breadcrumbs')
-const Carousels = () => import('@/views/base/Carousels')
-const Collapses = () => import('@/views/base/Collapses')
-const Jumbotrons = () => import('@/views/base/Jumbotrons')
-const ListGroups = () => import('@/views/base/ListGroups')
-const Navs = () => import('@/views/base/Navs')
-const Navbars = () => import('@/views/base/Navbars')
-const Paginations = () => import('@/views/base/Paginations')
-const Popovers = () => import('@/views/base/Popovers')
-const ProgressBars = () => import('@/views/base/ProgressBars')
-const Tooltips = () => import('@/views/base/Tooltips')
+const Admission = () => import('@/views/pages/Admission')//DONE
+
+
+const Home = () => import('@/views/pages/Home')//DONE
+
+
+const About = () => import('@/views/pages/About')//DONE
+
+const Contact = () => import('@/views/pages/Contact')//DONE
 
 // Views - Buttons
-const StandardButtons = () => import('@/views/buttons/StandardButtons')
-const ButtonGroups = () => import('@/views/buttons/ButtonGroups')
-const Dropdowns = () => import('@/views/buttons/Dropdowns')
-const BrandButtons = () => import('@/views/buttons/BrandButtons')
+const AllCertification = () => import('@/views/certification/AllCertification')//SET
+const AddNewCertification = () => import('@/views/certification/AddNewCertification')//SET
+
+
+const AllCourses= () => import('@/views/course/AllCourses')//SET
+const AddNewCourse = () => import('@/views/course/AddNewCourse')//SET
+
+const AllCourseCorriculum = () => import('@/views/corriculum/AllCourseCorriculum')//SET
+const AddNewCourseCorriculum = () => import('@/views/corriculum/AddNewCourseCorriculum')//SET
+
+const AllAdmins = () => import('@/views/admin/AllAdmins')//SET
+const AddNewAdmin = () => import('@/views/admin/AddNewAdmin')//SET
+
 
 // Views - Icons
-const CoreUIIcons = () => import('@/views/icons/CoreUIIcons')
-const Brands = () => import('@/views/icons/Brands')
-const Flags = () => import('@/views/icons/Flags')
+const AllEvents = () => import('@/views/events/AllEvents')
+const AddNewEvent = () => import('@/views/events/AddNewEvent')
+const EVentCategory = () => import('@/views/events/EventCategory')//SET
 
 // Views - Notifications
-const Alerts = () => import('@/views/notifications/Alerts')
-const Badges = () => import('@/views/notifications/Badges')
-const Modals = () => import('@/views/notifications/Modals')
+const AllPosts = () => import('@/views/blog/AllPosts')//SET
+const AddNewPosts = () => import('@/views/blog/AddNewPosts')//SET
+const PostsCategory = () => import('@/views/blog/PostCategory')//SET
 
 // Views - Pages
 const Page404 = () => import('@/views/pages/Page404')
@@ -53,9 +50,6 @@ const Page500 = () => import('@/views/pages/Page500')
 const Login = () => import('@/views/pages/Login')
 const Register = () => import('@/views/pages/Register')
 
-// Users
-const Users = () => import('@/views/users/Users')
-const User = () => import('@/views/users/User')
 
 Vue.use(Router)
 
@@ -80,231 +74,166 @@ function configRoutes () {
           component: Dashboard
         },
         {
-          path: 'theme',
-          redirect: '/theme/colors',
-          name: 'Theme',
+          path: 'pages',
+          // redirect: '/pages/home',
+          name: 'Pages',
           component: {
             render (c) { return c('router-view') }
           },
           children: [
             {
-              path: 'colors',
-              name: 'Colors',
-              component: Colors
+              path: 'admission',
+              name: 'Admission',
+              component: Admission
             },
             {
-              path: 'typography',
-              name: 'Typography',
-              component: Typography
-            }
+              path: 'home',
+              name: 'Home',
+              component: Home
+            },
+            {
+              path: 'about',
+              name: 'About Us',
+              component: About
+            },
+            {
+              path: 'contact',
+              name: 'Contact Us',
+              component: Contact
+            },
           ]
         },
         {
-          path: 'charts',
-          name: 'Charts',
-          component: Charts
-        },
-        {
-          path: 'widgets',
-          name: 'Widgets',
-          component: Widgets
-        },
-        {
-          path: 'users',
-          meta: {
-            label: 'Users'
-          },
-          component: {
-            render(c) {
-              return c('router-view')
-            }
-          },
-          children: [
-            {
-              path: '',
-              name: 'Users',
-              component: Users
-            },
-            {
-              path: ':id',
-              meta: {
-                label: 'User Details'
-              },
-              name: 'User',
-              component: User
-            }
-          ]
-        },
-        {
-          path: 'base',
-          redirect: '/base/cards',
-          name: 'Base',
+          path: 'certification',
+          redirect: '/certification/all',
+          name: 'Certification',
           component: {
             render (c) { return c('router-view') }
           },
           children: [
             {
-              path: 'cards',
-              name: 'Cards',
-              component: Cards
+              path: 'all',
+              name: 'All Certification',
+              component: AllCertification
             },
             {
-              path: 'forms',
-              name: 'Forms',
-              component: Forms
+              path: 'add-new',
+              name: 'Add New',
+              component: AddNewCertification
             },
-            {
-              path: 'switches',
-              name: 'Switches',
-              component: Switches
-            },
-            {
-              path: 'tables',
-              name: 'Tables',
-              component: Tables
-            },
-            {
-              path: 'tabs',
-              name: 'Tabs',
-              component: Tabs
-            },
-            {
-              path: 'breadcrumbs',
-              name: 'Breadcrumbs',
-              component: Breadcrumbs
-            },
-            {
-              path: 'carousels',
-              name: 'Carousels',
-              component: Carousels
-            },
-            {
-              path: 'collapses',
-              name: 'Collapses',
-              component: Collapses
-            },
-            {
-              path: 'jumbotrons',
-              name: 'Jumbotrons',
-              component: Jumbotrons
-            },
-            {
-              path: 'list-groups',
-              name: 'List Groups',
-              component: ListGroups
-            },
-            {
-              path: 'navs',
-              name: 'Navs',
-              component: Navs
-            },
-            {
-              path: 'navbars',
-              name: 'Navbars',
-              component: Navbars
-            },
-            {
-              path: 'paginations',
-              name: 'Paginations',
-              component: Paginations
-            },
-            {
-              path: 'popovers',
-              name: 'Popovers',
-              component: Popovers
-            },
-            {
-              path: 'progress-bars',
-              name: 'Progress Bars',
-              component: ProgressBars
-            },
-            {
-              path: 'tooltips',
-              name: 'Tooltips',
-              component: Tooltips
-            }
           ]
         },
         {
-          path: 'buttons',
-          redirect: '/buttons/standard-buttons',
-          name: 'Buttons',
-          component: {
-            render (c) { return c('router-view') }
-          },
-          children: [
-            {
-              path: 'standard-buttons',
-              name: 'Standard Buttons',
-              component: StandardButtons
-            },
-            {
-              path: 'button-groups',
-              name: 'Button Groups',
-              component: ButtonGroups
-            },
-            {
-              path: 'dropdowns',
-              name: 'Dropdowns',
-              component: Dropdowns
-            },
-            {
-              path: 'brand-buttons',
-              name: 'Brand Buttons',
-              component: BrandButtons
-            }
-          ]
-        },
-        {
-          path: 'icons',
-          redirect: '/icons/coreui-icons',
+          path: 'events',
+          redirect: '/events/all',
           name: 'CoreUI Icons',
           component: {
             render (c) { return c('router-view') }
           },
           children: [
             {
-              path: 'coreui-icons',
-              name: 'Icons library',
-              component: CoreUIIcons
+              path: 'all',
+              name: 'All Events',
+              component: AllEvents
             },
             {
-              path: 'brands',
-              name: 'Brands',
-              component: Brands
+              path: 'add-new',
+              name: 'Add New Event',
+              component: AddNewEvent
             },
             {
-              path: 'flags',
-              name: 'Flags',
-              component: Flags
-            }
+              path: 'category',
+              name: 'Add New Category',
+              component: EVentCategory
+            },
+            
           ]
         },
         {
-          path: 'notifications',
-          redirect: '/notifications/alerts',
-          name: 'Notifications',
+          path: 'posts',
+          redirect: '/posts/all',
+          name: 'Blog Post',
           component: {
             render (c) { return c('router-view') }
           },
           children: [
             {
-              path: 'alerts',
-              name: 'Alerts',
-              component: Alerts
+              path: 'all',
+              name: 'All Posts',
+              component: AllPosts
             },
             {
-              path: 'badges',
-              name: 'Badges',
-              component: Badges
+              path: 'add-new',
+              name: 'Add New Posts',
+              component: AddNewPosts
             },
             {
-              path: 'modals',
-              name: 'Modals',
-              component: Modals
+              path: 'category',
+              name: 'Posts Category',
+              component: PostsCategory
             }
           ]
-        }
+        },
+        {
+          path: 'course',
+          redirect: '/course/all',
+          name: 'Course',
+          component: {
+            render (c) { return c('router-view') }
+          },
+          children: [
+            {
+              path: 'all',
+              name: 'All Courses',
+              component: AllCourses
+            },
+            {
+              path: 'add-new',
+              name: 'Add New',
+              component: AddNewCourse
+            },
+          ]
+        },
+        {
+          path: 'corriculum',
+          redirect: '/corriculum/all',
+          name: 'Course Corriculum',
+          component: {
+            render (c) { return c('router-view') }
+          },
+          children: [
+            {
+              path: 'all',
+              name: 'All Course Corriculum',
+              component: AllCourseCorriculum
+            },
+            {
+              path: 'add-new',
+              name: 'Add New Course Corriculum',
+              component: AddNewCourseCorriculum
+            },
+          ]
+        },
+        {
+          path: 'users',
+          redirect: '/users/all',
+          name: 'Admin Users',
+          component: {
+            render (c) { return c('router-view') }
+          },
+          children: [
+            {
+              path: 'all',
+              name: 'All Users',
+              component: AllAdmins
+            },
+            {
+              path: 'add-new',
+              name: 'Add New',
+              component: AddNewAdmin
+            },
+          ]
+        },
       ]
     },
     {
